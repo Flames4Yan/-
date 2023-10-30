@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main() {
 	long long int p, i, l;
-	printf("ÇëÊäÈëµ±ÔÂÀûÈó£º");
+	printf("è¯·è¾“å…¥å½“æœˆåˆ©æ¶¦ï¼š");
 	scanf_s("%lld", &p);
 	l = p / 100000;
 	switch (l)
@@ -25,10 +25,10 @@ int main() {
 		i = p * 0.1;
 		break;
 	default:
-		printf("ÊäÈëÖµÒì³£/n");
+		printf("è¾“å…¥å€¼å¼‚å¸¸/n");
 		break;
 	}
-	printf("Ó¦·¢½±½ğÊıÎª£º%lld", i);
+	printf("åº”å‘å¥–é‡‘æ•°ä¸ºï¼š%lld", i);
 	return 0;
 }
 
