@@ -1,0 +1,37 @@
+#include <stdio.h>
+int main()
+{
+	int a, b,gcd;
+	int max, min;
+	int fun(int, int);
+	scanf_s("%d%d", &a, &b);
+	max = (a > b) ? a : b;
+	min = (a < b) ? a : b;
+	gcd = fun(max, min);
+	if (gcd == 1)
+	{
+		printf("两数互质");
+	}
+	else {
+		printf("最小公约数为：%d", gcd);
+	}
+	return 0;
+}
+int fun(int x,int y) 
+{
+	int r=1,r0;
+	if (x% y == 0) {
+		return y;
+	}
+	if (x % y != 0)
+	{
+			while (r != 0) 
+			{
+				r0 = r;
+				r = x % y;
+				x = y;
+				y = r;
+			}
+			return r0;
+	}
+}
