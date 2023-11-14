@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main()
+{
+	int a[4],i;
+	void fun(int*);
+	for (i = 0; i < 4; i++)
+	{
+		scanf_s("%d", &a[i]);
+	}
+	fun(a);
+	return 0;
+}
+void fun(int* x)
+{
+	int k[8],ll=0;
+	for (ll=0;ll<8;ll=ll+2)
+	{
+		k[ll] = x[ll/2];
+		printf("%d", k[ll]);
+		k[ll + 1] = (int)' ';
+		printf("%c", k[ll+1]);
+	}
+}
