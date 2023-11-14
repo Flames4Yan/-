@@ -1,1 +1,35 @@
-
+#include <stdio.h>
+int main()
+{
+	int fun(int);
+	int i,k;
+	printf("输入一个整数：");
+	scanf_s("%d", &i);
+	k=fun(i);
+	switch (k)
+	{
+	case 0:
+		printf("该数是素数\n");
+		break;
+	case 1:
+		printf("该数不是素数");
+		break;
+	}
+	return 0;
+}
+int fun(int x)
+{
+	int j;
+	for (j = 2;;j++)
+	{
+		if (j == x)
+		{
+			return 0;
+		}
+		else
+			if (x % j == 0)
+			{
+				return 1;
+			}
+	}
+}
