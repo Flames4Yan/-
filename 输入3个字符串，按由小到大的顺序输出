@@ -1,0 +1,63 @@
+
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	void sort(char*, char*, char*);
+	char a[20], b[20], c[20];
+	char* p1, * p2, * p3;
+	p1 = a, p2 = b, p3 = c;
+	cout << "请输入3个字符串：" << endl;
+	cout << "请输入字符串a："; cin >> a;
+	cout << "请输入字符串b："; cin >> b;
+	cout << "请输入字符串c："; cin >> c;
+	sort(p1, p2, p3);
+	cout << "3个字符串由小到大排序为：" << endl;
+	cout << a << "  " << b << "  " << c << endl;
+	return 0;
+}
+void sort(char* p1, char* p2, char* p3)//排序函数；
+{
+	void swap(char*, char*);
+	if (strcmp(p1, p2) > 0)swap(p1, p2);
+	if (strcmp(p1, p3) > 0)swap(p1, p3);
+	if (strcmp(p2, p3) > 0)swap(p2, p3);
+}
+void swap(char* p1, char* p2)
+{
+	char t;
+	if (strlen(p1) > strlen(p2))
+	{
+		for (; *p2 != '\0'; p1++, p2++) 
+		{
+			t = *p2;
+			*p2 = *p1;
+			*p1 = t;
+		}
+		for (; *p1 != 0; p1++, p2++)
+		{
+			*p2 = *p1;
+			*p1 = '\0';
+		}
+		*p2 = '\0';
+	}
+	else
+	{
+		for (; *p1 != '\0'; p1++, p2++)//同上
+		{
+			t = *p1;
+			*p1 = *p2;
+			*p2 = t;
+		}
+
+		for (; *p2 != 0; p1++, p2++)
+		{
+			*p1 = *p2;
+			*p2 = '\0';
+		}
+		*p1 = '\0';
+	}
+}
+
+
